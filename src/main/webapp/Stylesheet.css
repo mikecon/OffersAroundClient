@@ -1,0 +1,27 @@
+body {
+    background-color: lightblue;
+}
+
+h1,h3 {
+        font-family: Helvetica, Arial;
+        text-align: center;
+    }
+    
+h3  {
+        font-family:Comic Sans;
+        font-style: italic;
+    }
+    
+#date{
+        
+        text-align: right;
+            
+    }
+#readbutton{
+    
+    position:absolute;
+    top: 5%;
+    right: 2%;
+
+    }
+

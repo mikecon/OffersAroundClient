@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Offers Management</title>
+    </h:head>
+    <h:body>
+        <h:form id="FormOffer">
+            <p:growl/>
+            <p:panel header="Form Insert Offer:" footer="Offers Around">
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="Business Id" for="businessId"/>
+                    <p:inputText id="businessId" value="#{offerBean.businessId}" required="true" size="9"/>
+                    <p:message for="businessId"/>
+                    <h:outputLabel value="Business Name:" for="businessName"/>
+                    <p:inputText id="businessName" value="#{offerBean.businessName}" required="true"/>
+                    <p:message for="businessName" />
+                    <h:outputLabel value="Latitude:" for="latitude"/>
+                    <p:inputText id="latitude" value="#{offerBean.latitude}" required="true"/>
+                    <p:message for="latitude" />
+                    <h:outputLabel value="Longitude:" for="longitude"/>
+                    <p:inputText id="longitude" value="#{offerBean.longitude}" required="true"/>
+                    <p:message for="longitude" />
+                    <h:outputLabel value="Offer:" for="offer"/>
+                    <p:inputText id="offer" value="#{offerBean.offer}" required="true"/>
+                    <p:message for="offer"/>
+                    <h:panelGroup />
+                    <p:commandButton id="bt" ajax="false" action="#{offerBean.saveOff()}"  
+                                     value="Save" icon="ui-icon-disk"/>
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+        <h:outputText value="&lt;br/&gt;" escape="false"/>
+        <h:outputText value="&lt;br/&gt;" escape="false"/>  
+        <h:form>
+            <p:panel header="Search Offer:" footer="Offers Around">
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="Business ID:" for="businessId"/>
+                    <p:inputText id="businessId" value="#{offerBean.businessId}" required="true" size="9"/>
+                    <p:message for="businessId"/>
+                    <h:panelGroup />
+                    <p:commandButton id="bt2" ajax="false" action="#{offerBean.searchOff()}"  
+                                     value="Search" icon="ui-icon-search"/>
+                </h:panelGrid> 
+            </p:panel>
+        </h:form>
+
+    </h:body>
+</html>
+

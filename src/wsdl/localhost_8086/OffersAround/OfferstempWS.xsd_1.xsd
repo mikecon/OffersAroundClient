@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.9-b14002 svn-revision#14004. --><xs:schema xmlns:tns="http://services.offersaroundws.teicm.gr/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.offersaroundws.teicm.gr/">
+
+<xs:element name="AllOffers" type="tns:AllOffers"/>
+
+<xs:element name="AllOffersResponse" type="tns:AllOffersResponse"/>
+
+<xs:element name="InsertOffer" type="tns:InsertOffer"/>
+
+<xs:element name="InsertOfferResponse" type="tns:InsertOfferResponse"/>
+
+<xs:element name="SearchOffer" type="tns:SearchOffer"/>
+
+<xs:element name="SearchOfferResponse" type="tns:SearchOfferResponse"/>
+
+<xs:complexType name="AllOffers">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="AllOffersResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:offerstemp" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="offerstemp">
+<xs:sequence>
+<xs:element name="businessId" type="xs:int" minOccurs="0"/>
+<xs:element name="businessName" type="xs:string" minOccurs="0"/>
+<xs:element name="latitude" type="xs:float"/>
+<xs:element name="longitude" type="xs:float"/>
+<xs:element name="offer" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SearchOffer">
+<xs:sequence>
+<xs:element name="businessId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SearchOfferResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="InsertOffer">
+<xs:sequence>
+<xs:element name="businessId" type="xs:int"/>
+<xs:element name="businessName" type="xs:string" minOccurs="0"/>
+<xs:element name="latitude" type="xs:float"/>
+<xs:element name="longitude" type="xs:float"/>
+<xs:element name="offer" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="InsertOfferResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
