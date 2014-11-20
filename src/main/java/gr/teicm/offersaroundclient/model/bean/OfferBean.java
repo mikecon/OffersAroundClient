@@ -67,7 +67,7 @@ public class OfferBean {
     
     public String saveOff(){
         String msj = insertOffer(businessId, businessName, latitude, longitude, offer);
-        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,msj,".I.");
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,msj,"...");
         FacesContext.getCurrentInstance().addMessage(null,msg);
         cleanForm();
         return "index";
@@ -75,7 +75,7 @@ public class OfferBean {
     
     public String searchOff(){
         String msj = searchOffer(businessId);
-        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,msj,".I.");
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,msj,"...");
         FacesContext.getCurrentInstance().addMessage(null,msg);
         cleanForm();
         return "index";
@@ -100,7 +100,7 @@ public class OfferBean {
         return port.searchOffer(businessId);
     }
     
-    private static List<gr.teicm.offersaroundws.services.Offerstemp> allOffers(){
+    private static List<Offerstemp> allOffers(){
         gr.teicm.offersaroundws.services.OfferstempWS_Service service = new gr.teicm.offersaroundws.services.OfferstempWS_Service();
         gr.teicm.offersaroundws.services.OfferstempWS port = service.getOfferstempWSPort();
         return port.allOffers();

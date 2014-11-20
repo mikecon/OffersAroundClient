@@ -4,12 +4,12 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Offers Management</title>
+        <title>Insert Offers Around</title>
     </h:head>
     <h:body>
-        <h:form id="FormOffer">
+        <h:form id="InsertForm">
             <p:growl/>
-            <p:panel header="Form Insert Offer:" footer="Offers Around">
+            <p:panel header="Insert:" footer="Offers Around">
                 <h:panelGrid columns="3">
                     <h:outputLabel value="Business Id" for="businessId"/>
                     <p:inputText id="businessId" value="#{offerBean.businessId}" required="true" size="9"/>
@@ -32,21 +32,6 @@
                 </h:panelGrid>
             </p:panel>
         </h:form>
-        <h:outputText value="&lt;br/&gt;" escape="false"/>
-        <h:outputText value="&lt;br/&gt;" escape="false"/>  
-        <h:form>
-            <p:panel header="Search Offer:" footer="Offers Around">
-                <h:panelGrid columns="3">
-                    <h:outputLabel value="Business ID:" for="businessId"/>
-                    <p:inputText id="businessId" value="#{offerBean.businessId}" required="true" size="9"/>
-                    <p:message for="businessId"/>
-                    <h:panelGroup />
-                    <p:commandButton id="bt2" ajax="false" action="#{offerBean.searchOff()}"  
-                                     value="Search" icon="ui-icon-search"/>
-                </h:panelGrid> 
-            </p:panel>
-        </h:form>
-
     </h:body>
 </html>
 

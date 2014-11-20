@@ -13,7 +13,7 @@
 	    <style>
 	      html { height: 100% }
 	      body { height:75%; }
-	      #map-canvas { height:100% ; margin-right:3%;  margin-left:35%; padding: 0 }          
+	      #map-canvas { height:100% ; margin-right:2%;  margin-left:2%; padding: 0 }          
 	    </style>
     </head>
     
@@ -37,7 +37,6 @@
             
         <p>
             <button id="readbutton"  type="button" onclick='location.href="javascript: openwindow()"' >Read about the project</button>
-          
         </p>
 
     </body>
