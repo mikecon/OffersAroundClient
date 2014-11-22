@@ -17,7 +17,7 @@
 	    </style>
     </head>
     
-    
+
     <%
         Date date=new Date();
         %>
@@ -38,6 +38,6 @@
         <p>
             <button id="readbutton"  type="button" onclick='location.href="javascript: openwindow()"' >Read about the project</button>
         </p>
-
+        
     </body>
 </html>

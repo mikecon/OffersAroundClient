@@ -70,15 +70,15 @@ public class OfferBean {
         FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,msj,"...");
         FacesContext.getCurrentInstance().addMessage(null,msg);
         cleanForm();
-        return "index";
+        return "management";
     }    
     
     public String searchOff(){
         String msj = searchOffer(businessId);
-        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,msj,"...");
-        FacesContext.getCurrentInstance().addMessage(null,msg);
+        FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, msj, "...");
+        FacesContext.getCurrentInstance().addMessage(null, msg);
         cleanForm();
-        return "index";
+        return "management";
     }    
     
     public void cleanForm(){
