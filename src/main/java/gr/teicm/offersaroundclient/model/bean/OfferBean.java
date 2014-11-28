@@ -16,17 +16,17 @@ public class OfferBean {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8086/OffersAround/OfferstempWS.wsdl")
     private OfferstempWS_Service service;
 
-    private Integer businessId;
+    private Short businessId;
     private String businessName;
     private float latitude;
     private float longitude;
     private String offer;
 
-    public Integer getBusinessId() {
+    public Short getBusinessId() {
         return businessId;
     }
 
-    public void setBusinessId(Integer businessId) {
+    public void setBusinessId(Short businessId) {
         this.businessId = businessId;
     }
 
@@ -94,7 +94,7 @@ public class OfferBean {
         return list;
     }
     
-    private static String searchOffer(int businessId){
+    private static String searchOffer(short businessId){
         gr.teicm.offersaroundws.services.OfferstempWS_Service service = new gr.teicm.offersaroundws.services.OfferstempWS_Service();
         gr.teicm.offersaroundws.services.OfferstempWS port = service.getOfferstempWSPort();
         return port.searchOffer(businessId);
@@ -107,7 +107,7 @@ public class OfferBean {
     }
 
     
-    private static String insertOffer(int businessId, String businessName,float latitude,float longitude,String offer){
+    private static String insertOffer(short businessId, String businessName,float latitude,float longitude,String offer){
         gr.teicm.offersaroundws.services.OfferstempWS_Service service = new gr.teicm.offersaroundws.services.OfferstempWS_Service();
         gr.teicm.offersaroundws.services.OfferstempWS port = service.getOfferstempWSPort();
         return port.insertOffer(businessId, businessName, latitude, longitude, offer);
