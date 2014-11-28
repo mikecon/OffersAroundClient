@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="Stylesheet.css">
         <title>Offers Around</title>
          <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
-	    <script src="jeolocator.js"></script>
+	    <script src="geolocation.js"></script>
 	    <style>
 	      html { height: 100% }
 	      body { height:75%; }
