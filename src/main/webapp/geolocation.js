@@ -1,29 +1,4 @@
-function initialize() {
-    var myLatlng = new google.maps.LatLng(41.07480,23.55370);
-    var mapOptions = {
-        zoom: 16,
-        center: myLatlng
-    }
-    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title: 'Your location.'
-    });
-    
-    var infowindow = new google.maps.InfoWindow({
-        content: 'You are here.'
-    });
-    
-    infowindow.open(map,marker);
-    
-    //google.maps.event.addListener(marker, 'click', function() {
-    //    infowindow.open(map,marker);
-    //});
-    
-    setMarkers(map, offers);
-}
+var map;
 
 var offers = [
     [ 1, 'Masoutis', 41.07743, 23.55846, 'Milk 2Euros'],
@@ -33,14 +8,65 @@ var offers = [
     [ 5, 'Multirama', 41.07349, 23.55829, 'USB Stick 16gb 8Euros']
 ];
 
-function setMarkers(map, locations) {
-  // Add markers to the map
+function initialize() {    
+    var mapOptions = {
+        zoom: 16
+    };
+    
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+    if(navigator.geolocation) {
+        
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: 'Your location.'
+            });
+        
+            var infowindow = new google.maps.InfoWindow({
+                content: 'You are here.'
+            });
+        
+            infowindow.open(map,marker);
+            map.setCenter(myLatlng);
+        }, 
+        function() {
+            handleNoGeolocation(true);
+        });
+    } 
+    else { 
+        handleNoGeolocation(false); 
+    }
+   
+    setMarkers(map, offers);
+}
+
+function handleNoGeolocation(errorFlag) {
+    if (errorFlag) {
+        var content = 'Error: The Geolocation service failed.';
+    } else {
+        var content = 'Error: Your browser doesn\'t support geolocation.';
+    }
+
+    var options = {
+        map: map,
+        position: new google.maps.LatLng(41.07480, 23.55370),
+        content: content
+    };
+
+    var infowindow = new google.maps.InfoWindow(options);
+    map.setCenter(options.position);
+}
+
+function setMarkers(map, locations) {
     for (var i = 0; i < locations.length; i++) {
         var offer = locations[i];
-        var myLatLng = new google.maps.LatLng(offer[2], offer[3]);
+        var LatLng = new google.maps.LatLng(offer[2], offer[3]);
         var marker = new google.maps.Marker({
-            position: myLatLng,
+            position: LatLng,
             map: map,
             title: offer[1],
             zIndex: offer[0],
@@ -52,10 +78,6 @@ function setMarkers(map, locations) {
         });
         
         infowindow.open(map,marker);
-        
-        //google.maps.event.addListener(this, 'click', function() {
-        //    infowindow.open(map,this);
-        //});
     }
 }
 
