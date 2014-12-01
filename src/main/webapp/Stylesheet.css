@@ -20,8 +20,22 @@ h3  {
 #readbutton{
     
     position:absolute;
-    top: 5%;
+    top: 8%;
     right: 2%;
+
+    }
+ #listbutton{
+    
+    position:absolute;
+    top: 8%;
+    right: 20%;
+
+    }
+ #managementbutton{
+    
+    position:absolute;
+    top: 8%;
+    right: 13%;
 
     }
 
