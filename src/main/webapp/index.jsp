@@ -34,9 +34,36 @@
             window.open("About.html","mywindow","menubar=1,resizable=1,width=350,height=250");
         }
         </script>
+        <script language="JavaScript1.2">
+        function openlist()
+        {
+            window.open("list.xhtml","mywindow1","menubar=1,resizable=1,width=350,height=450");
+        }
+        </script>
+        <script language="JavaScript1.2">
+        function openmanagement()
+        {
+            window.open("management.xhtml","mywindow2","menubar=1,resizable=1,width=350,height=450");
+        }
+        </script>
+        <script language="JavaScript1.2">
+        function loginform()
+        {
+            window.open("loginform.jsp","mywindow3","menubar=1,resizable=1,width=350,height=350");
+        }
+        </script>
             
         <p>
             <button id="readbutton"  type="button" onclick='location.href="javascript: openwindow()"' >Read about the project</button>
+        </p>
+        <p>
+            <button id="listbutton"  type="button" onclick='location.href="javascript: openlist()"' >List</button>
+        </p>
+        <p>
+            <button id="managementbutton"  type="button" onclick='location.href="javascript: openmanagement()"' >Management</button>
+        </p>
+        <p>
+            <button id="loginformbutton"  type="button" onclick='location.href="javascript: loginform()"' >Business LogIn</button>
         </p>
         
     </body>
