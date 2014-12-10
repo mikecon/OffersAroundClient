@@ -16,17 +16,17 @@ public class OfferBean {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8086/OffersAround/OfferstempWS.wsdl")
     private OfferstempWS_Service service;
 
-    private int businessId;
+    private Integer businessId;
     private String businessName;
     private float latitude;
     private float longitude;
     private String offer;
 
-    public int getBusinessId() {
+    public Integer getBusinessId() {
         return businessId;
     }
 
-    public void setBusinessId(int businessId) {
+    public void setBusinessId(Integer businessId) {
         this.businessId = businessId;
     }
 
@@ -77,7 +77,7 @@ public class OfferBean {
         String msj = searchOffer(businessId);
         FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, msj, "...");
         FacesContext.getCurrentInstance().addMessage(null, msg);
-        cleanForm();
+        //cleanForm();
         return "management";
     }    
     

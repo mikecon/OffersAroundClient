@@ -37,13 +37,13 @@
         <script language="JavaScript1.2">
         function openlist()
         {
-            window.open("list.xhtml","mywindow1","menubar=1,resizable=1,width=350,height=450");
+            window.open("list.xhtml","mywindow1","menubar=1,resizable=1,width=650,height=450");
         }
         </script>
         <script language="JavaScript1.2">
         function openmanagement()
         {
-            window.open("management.xhtml","mywindow2","menubar=1,resizable=1,width=350,height=450");
+            window.open("management.xhtml","mywindow2","menubar=1,resizable=1,width=650,height=500");
         }
         </script>
         <script language="JavaScript1.2">
@@ -63,7 +63,7 @@
             <button id="managementbutton"  type="button" onclick='location.href="javascript: openmanagement()"' >Management</button>
         </p>
         <p>
-            <button id="loginformbutton"  type="button" onclick='location.href="javascript: loginform()"' >Business LogIn</button>
+            <button id="loginformbutton"  type="button" onclick='location.href="javascript: loginform()"' >Login</button>
         </p>
         
     </body>
