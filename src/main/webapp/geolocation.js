@@ -1,14 +1,9 @@
 var map;
 
-var offers = [
-    [ 1, 'Masoutis', 41.07743, 23.55846, 'Milk 2Euros'],
-    [ 2, 'Mikel',  41.07821, 23.55486, 'Coffee 1Euro'],
-    [ 3, 'Admiral', 41.07776, 23.55022, 'Shoes 20Euros'],
-    [ 4, 'Goodys', 41.07345, 23.55044, 'Burger 1.5Euros'],
-    [ 5, 'Multirama', 41.07349, 23.55829, 'USB Stick 16gb 8Euros']
-];
-
 function initialize() {    
+    var table = document.getElementById('records');
+    var offers  = parseTable(table);
+
     var mapOptions = {
         zoom: 16
     };
@@ -64,17 +59,20 @@ function handleNoGeolocation(errorFlag) {
 function setMarkers(map, locations) {
     for (var i = 0; i < locations.length; i++) {
         var offer = locations[i];
-        var LatLng = new google.maps.LatLng(offer[2], offer[3]);
+        var values = Object.getOwnPropertyNames(offer).map(function(key) {
+            return offer[key];
+        });
+        var LatLng = new google.maps.LatLng(values[2], values[3]);
         var marker = new google.maps.Marker({
             position: LatLng,
             map: map,
-            title: offer[1],
-            zIndex: offer[0],
+            title: values[1],
+            zIndex: parseInt(values[0])
         });
         
         var infowindow = new google.maps.InfoWindow({            
-            content: offer[4],
-            zIndex: offer[0]
+            content: values[4],
+            zIndex: parseInt(values[0])
         });
         
         infowindow.open(map,marker);
